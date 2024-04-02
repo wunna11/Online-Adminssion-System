@@ -22,7 +22,7 @@ function App() {
       <Route path="/auth" element={<Auth />} />
       <Route path="/otp" element={<Otp />} />
 
-      <Route path="/personalInfo" element={<PersonalInfo />} />
+      <Route path="/personal" element={<PersonalInfo />} />
       </Route>
     </Routes>
   );

@@ -5,6 +5,7 @@ import Input from "../components/form/Input";
 import Button from "../components/form/Button";
 import ReactSelect from "../components/form/ReactSelect";
 import DatePicker from "../components/form/DatePicker";
+import { useState } from "react";
 
 function PersonalInfo() {
   const methods = useForm({
@@ -13,6 +14,8 @@ function PersonalInfo() {
   });
 
   const { handleSubmit } = methods;
+
+  const [isSfu, setIsSfu] = useState(0);
 
   const onSubmit = (data: any) => {
     console.log("data", data);
@@ -37,23 +40,33 @@ function PersonalInfo() {
                   Are you an alumni SFU?
                 </p>
                 <div className="flex space-x-10">
-                  <CheckBox id="is_sfu" label="Yes" />
-                  <CheckBox id="not_sfu" label="No" />
+                  <CheckBox
+                    id="is_sfu"
+                    label="Yes"
+                    checked={isSfu == 1}
+                    onChange={() => setIsSfu(1)}
+                    value={isSfu}
+                  />
+                  <CheckBox
+                    id="is_sfu"
+                    label="No"
+                    checked={isSfu == 0}
+                    onChange={() => setIsSfu(0)}
+                    value={isSfu}
+                  />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <Input
                     id="first_name"
                     label="First Name"
-                    placeholder="Enter your first name"
-                    requiredField
+                    placeholder="Enter your first name"                  
                   />
 
                   <Input
                     id="first_name"
                     label="Last Name"
                     placeholder="Enter your last name"
-                    requiredField
                   />
 
                   <ReactSelect

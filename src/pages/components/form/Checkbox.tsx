@@ -6,6 +6,9 @@ export default function CheckBox({
   label,
   helperText = "",
   type = "checkbox",
+  checked,
+  onChange,
+  value,
   readOnly = false,
   validation,
   ...rest
@@ -14,6 +17,9 @@ export default function CheckBox({
   label?: string;
   placeholder?: string;
   helperText?: string;
+  checked?: boolean;
+  value: string | number;
+  onChange?: () => void;
   type?:
     | "text"
     | "email"
@@ -45,6 +51,9 @@ export default function CheckBox({
           name={id}
           type={type}
           readOnly={readOnly}
+          checked={checked}
+          onChange={onChange}
+          value={value}
           className="w-6 h-6 text-primary bg-white-100 border-gray-300 rounded focus:ring-gray-400"
         />
 
