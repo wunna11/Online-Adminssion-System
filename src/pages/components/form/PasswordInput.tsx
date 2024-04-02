@@ -48,6 +48,11 @@ export default function PasswordInput({
     });
   };
 
+  const add = (x: number) => (y: number) => x + y;
+  const res = add(1)(2)
+  // console.log('add', add(1))
+  console.log('add', res)
+
   return (
     <div>
       {label && (
@@ -71,9 +76,9 @@ export default function PasswordInput({
             readOnly
               ? "bg-gray-50 text-black focus:ring-0 cursor-not-allowed border-gray-200 focus:border-gray-200"
               : errors[id]
-              ? "bg-gray-50 text-black border-red-500 focus:border-red-500 focus:ring-red-200"
-              : "bg-white text-gray-900 border-gray-login300 focus:ring-gray-200",
-            "block w-full border text-sm rounded-lg p-2.5 focus:border-gray-800 focus:ring-2 placeholder-gray-300"
+              ? "bg-gray-50 text-black border-red-50 focus:border-red-50 focus:ring-red-50"
+              : "bg-white text-gray-900 border border-gray-300 focus:ring-gray-200 focus:border-gray-800",
+            "block w-full border text-sm rounded-lg p-2.5 placeholder-gray-300"
           )}
           placeholder={placeholder}
           aria-describedby={id}
@@ -87,19 +92,21 @@ export default function PasswordInput({
           </div>
         )}
 
-        <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-          <div onClick={handleClickShowPassword} className="cursor-pointer">
-            <img src="/img/auth/pwd.png" alt="password" />
+        {!errors[id] && (
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+            <div onClick={handleClickShowPassword} className="cursor-pointer">
+              <img src="/img/auth/pwd.png" alt="password" />
+            </div>
           </div>
-        </div>
+        )}
       </div>
-      
+
       <div className="mt-1 text-left">
         {helperText !== "" && (
           <p className="text-xs text-gray-500">{helperText}</p>
         )}
         {errors[id] && (
-          <span className="text-sm text-red-500 text-left">
+          <span className="text-sm text-red-50 text-left">
             {errors[id]?.message as string}
           </span>
         )}

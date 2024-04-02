@@ -7,17 +7,23 @@ import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 import '@fontsource/poppins/800.css';
 import '@fontsource/poppins/900.css';
-import Login from "./pages/auth/Login";
-import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Register from "./pages/auth/Register";
+import { Routes, Route } from "react-router-dom";
+import Auth from './pages/auth';
+import Otp from './pages/auth/Otp';
+import Navbar from './pages/Layout/Navbar';
+import PersonalInfo from './pages/form/PersonalInfo';
 
 function App() {
 
   return (
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+      <Route element={<Navbar />}>
+      <Route path="/auth" element={<Auth />} />
+      <Route path="/otp" element={<Otp />} />
+
+      <Route path="/personalInfo" element={<PersonalInfo />} />
+      </Route>
     </Routes>
   );
 }

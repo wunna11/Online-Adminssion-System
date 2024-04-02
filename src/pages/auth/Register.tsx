@@ -3,11 +3,19 @@ import AuthBgLayout from "../components/AuthBgLayout";
 import Input from "../components/form/Input";
 import Button from "../components/form/Button";
 import PasswordInput from "../components/form/PasswordInput";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { userRegisterSchema } from "../../lib/validation/auth/register";
 
-function Register() {
+interface RegisterParams {
+  onClick: () => void;
+}
+
+function Register(props: RegisterParams) {
+  const { onClick } = props;
+
   const methods = useForm({
     mode: "onTouched",
-    // resolver: yupResolver(userLoginSchema),
+    resolver: yupResolver(userRegisterSchema),
   });
 
   const { handleSubmit } = methods;
@@ -56,7 +64,7 @@ function Register() {
 
                 <div className="mb-[40px]">
                   <PasswordInput
-                    id="re-password"
+                    id="confirm_password"
                     label="Confirm Password"
                     placeholder="Retype password"
                     requiredField
@@ -65,11 +73,14 @@ function Register() {
 
                 <Button type="submit">Register</Button>
 
-                <div className="text-center text-[14px] text-gray-800 pt-[14px]">
-                  <p>
-                    Have an account?
-                    <a href="">Login</a>
-                  </p>
+                <div className="text-center text-[14px] pt-[14px]">
+                  <span className="text-gray-800">Have an account?</span>
+                  <span
+                    onClick={onClick}
+                    className="text-blue-100 font-medium cursor-pointer ml-1 hover:text-blue-50"
+                  >
+                    Login
+                  </span>
                 </div>
               </form>
             </FormProvider>
