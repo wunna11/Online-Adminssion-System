@@ -12,7 +12,7 @@ import { Routes, Route } from "react-router-dom";
 import Auth from './pages/auth';
 import Otp from './pages/auth/Otp';
 import Navbar from './pages/Layout/Navbar';
-import PersonalInfo from './pages/form/PersonalInfo';
+import ApplicationForm from './pages/form';
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
       <Route path="/auth" element={<Auth />} />
       <Route path="/otp" element={<Otp />} />
 
-      <Route path="/personal" element={<PersonalInfo />} />
+      <Route path="/personal" element={<ApplicationForm />} />
       </Route>
     </Routes>
   );

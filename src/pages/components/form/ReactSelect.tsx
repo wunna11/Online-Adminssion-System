@@ -39,6 +39,7 @@ export default function ReactSelect({
   const customStyles = {
     control: (styles: any, state: any) => ({
       ...styles,
+      height: '42px',
       border: state.isFocused ? '0' : '1px solid #C0C0C0',
       boxShadow: state.isFocused ? '0 0 0 0.07rem #212121' : 0,
       '*': {
@@ -86,7 +87,7 @@ export default function ReactSelect({
   } = useFormContext();
 
   return (
-    <div className="w-full mb-5">
+    <div className="w-full mb-[20px]">
       {label && (
         <p
           // htmlFor={id}
@@ -96,7 +97,7 @@ export default function ReactSelect({
           {/* {requiredField && <span className="text-red-400">&nbsp;*</span>} */}
         </p>
       )}
-      <div className="relative mt-1">
+      <div className="relative">
         <Controller
           name={id}
           defaultValue={defaultValue ? options?.[defaultValue] : -1}

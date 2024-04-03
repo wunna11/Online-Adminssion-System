@@ -41,8 +41,6 @@ export default function Input({
     formState: { errors },
   } = useFormContext();
 
-  console.log('type', type)
-
   return (
     <div className="mb-[20px]">
       {label && (

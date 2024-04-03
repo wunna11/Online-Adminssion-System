@@ -38,14 +38,12 @@ function Login(props: LoginParams) {
                   id="email"
                   label="Email Address"
                   placeholder="Enter Your Email Here"
-                  requiredField
                 />
 
                 <PasswordInput
                   id="password"
                   label="Password"
                   placeholder="Enter your password"
-                  requiredField
                 />
 
                 <div className="text-right mb-[20px]">
@@ -54,7 +52,9 @@ function Login(props: LoginParams) {
                   </a>
                 </div>
 
-                <Button type="submit">Login</Button>
+                <Button 
+                  type="submit"
+                >Login</Button>
 
                 <div className="text-center text-[14px] pt-[14px]">
                   <span className="text-gray-800">Don't have an account?</span>

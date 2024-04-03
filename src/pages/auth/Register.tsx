@@ -36,21 +36,18 @@ function Register(props: RegisterParams) {
                   id="name"
                   label="Name"
                   placeholder="Enter your name here"
-                  requiredField
                 />
 
                 <Input
                   id="phone"
                   label="Phone"
                   placeholder="09xxxxxxxxx"
-                  requiredField
                 />
 
                 <Input
                   id="email"
                   label="Email Address"
                   placeholder="Enter your email here"
-                  requiredField
                 />
 
                 <div className="mb-[20px]">
@@ -58,7 +55,6 @@ function Register(props: RegisterParams) {
                     id="password"
                     label="Create Password"
                     placeholder="Enter password"
-                    requiredField
                   />
                 </div>
 
@@ -67,7 +63,6 @@ function Register(props: RegisterParams) {
                     id="confirm_password"
                     label="Confirm Password"
                     placeholder="Retype password"
-                    requiredField
                   />
                 </div>
 
